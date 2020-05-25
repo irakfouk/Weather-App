@@ -27,7 +27,7 @@ class App extends React.Component{
            longitude: position.coords.longitude
          }
          this.setState({coords:newCoords});
-         Axios.get(`http://api.weatherstack.com/current?access_key=698aaa2403cea7016b14db7f22e39579&query=${this.state.coords.latitude},${this.state.coords.longitude}`).then(res =>{
+         Axios.get(`https://api.weatherstack.com/current?access_key=698aaa2403cea7016b14db7f22e39579&query=${this.state.coords.latitude},${this.state.coords.longitude}`).then(res =>{
            let weatherData = {
              location:res.data.location.name,
              temperature:res.data.current.temperature,
@@ -58,7 +58,7 @@ change = (value) =>  {
 
 changeWeather = (event) =>{
   event.preventDefault();
-  Axios.get(`http://api.weatherstack.com/current?access_key=698aaa2403cea7016b14db7f22e39579&query=${this.state.inputData}`).then(res =>{
+  Axios.get(`https://api.weatherstack.com/current?access_key=698aaa2403cea7016b14db7f22e39579&query=${this.state.inputData}`).then(res =>{
     let weatherData = {
       location:res.data.location.name,
       temperature:res.data.current.temperature,
